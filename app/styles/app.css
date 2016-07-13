@@ -1,0 +1,30 @@
+body, .main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden; }
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  border-bottom: 1px solid #ddd; }
+
+.content {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px;
+  background-color: #f1f1f1;
+  overflow-y: auto; }
+
+.list-group .list-group-item .image {
+  height: 120px; }
+
+/*# sourceMappingURL=app.css.map */

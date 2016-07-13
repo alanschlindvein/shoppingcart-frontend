@@ -1,0 +1,7 @@
+<div ng-init="initHeaderController()" class="header-container">
+  <button class="back-button" ng-click="back()" ng-if="headerViewControl.showBackButton"><i class="glyphicon glyphicon-arrow-left"></i></button>
+  <span class="title">{{headerViewControl.title | soGoToLang}}</span>
+  <section class="basket pull-right">
+    <a ng-href="" ng-click="showCartItems()">Cart <span class="badge">{{headerViewControl.amount}}</span></a>
+  </section>
+</div>

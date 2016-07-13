@@ -1,0 +1,9 @@
+<div ng-init="initProductsController()">
+  <section class="list-group">
+    <div class="list-group-item" ng-click="addToCart(product)" ng-repeat="product in productsViewControl.products">
+      <img class="image" ng-src="{{product.image}}">
+      <p class="name">{{product.name}}</p>
+      <p class="price">{{product.price | currency: '$ '}}</p>
+    </div>
+  </section>
+</div>
