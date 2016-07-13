@@ -25,12 +25,48 @@ body, .main {
   padding: 8px;
   background-color: #f1f1f1;
   overflow-y: auto;
+  .products {
+    .products-list {
+      .product-item {
+        img { float: left }
+        .info {
+          float: right;
+          p { margin-bottom: 0; }
+          .name {
+            font-size: 1.6rem;
+            font-weight: 600;
+          }
+          .price {
+            float: right;
+          }
+        }
+        .add-button {
+          position: absolute;
+          bottom: 10px;
+          right: 15px;
+        }
+        aside {
+          position: absolute;
+          left: 15px;
+          bottom: 10px;
+        }
+      }
+    }
+  }
+  .shoppingcart {
+
+  }
 }
 
 .list-group {
   .list-group-item {
+    height: 160px;
+    margin-bottom: 5px;
+    -webkit-box-shadow: 1px 1px 1px #ddd;
+    -moz-box-shadow: 1px 1px 1px #ddd;
+    box-shadow: 1px 1px 1px #ddd;
     .image {
-      height: 120px;
+      height: 90px;
     }
   }
 }

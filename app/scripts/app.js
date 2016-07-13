@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('MapApp', ['ngAnimate', 'ui.router', 'soTranslate', 'angularSpinner'])
+angular.module('MapApp', ['ngAnimate', 'ui.router', 'soTranslate', 'angularSpinner', 'ngFlash'])
 	.value('appSettings', {
 		baseUrl: 'http://shoppingcart-mcfadyenbrazil.rhcloud.com',
 

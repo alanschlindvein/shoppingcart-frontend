@@ -1,9 +1,18 @@
-<div ng-init="initProductsController()">
-  <section class="list-group">
-    <div class="list-group-item" ng-click="addToCart(product)" ng-repeat="product in productsViewControl.products">
+<div ng-init="initProductsController()" class="products">
+  <flash-message></flash-message>
+  <section class="list-group products-list">
+    <div class="list-group-item product-item" ng-init="product.quantity = 1" ng-repeat="product in productsViewControl.products">
       <img class="image" ng-src="{{product.image}}">
-      <p class="name">{{product.name}}</p>
-      <p class="price">{{product.price | currency: '$ '}}</p>
+      <div class="info">
+        <p class="name">{{product.name}}</p>
+        <p class="price">{{product.price | currency: '$ '}}</p>
+      </div>
+      <button class="btn btn-primary add-button" ng-click="addToCart(product)">{{::'ADD_TO_CART' | soGoToLang}}</button>
+      <aside class="controls">
+        <button class="btn btn-default" ng-click="product.quantity = product.quantity+1"><i class="glyphicon glyphicon-arrow-up"></i></button>
+        <span>{{product.quantity}}</span>
+        <button ng-hide="product.quantity == 1" class="btn btn-default" ng-click="product.quantity = product.quantity-1"><i class="glyphicon glyphicon-arrow-down"></i></button>
+      </aside>
     </div>
   </section>
 </div>

@@ -23,8 +23,33 @@ body, .main {
   padding: 8px;
   background-color: #f1f1f1;
   overflow-y: auto; }
+  .content .products .products-list .product-item img {
+    float: left; }
+  .content .products .products-list .product-item .info {
+    float: right; }
+    .content .products .products-list .product-item .info p {
+      margin-bottom: 0; }
+    .content .products .products-list .product-item .info .name {
+      font-size: 1.6rem;
+      font-weight: 600; }
+    .content .products .products-list .product-item .info .price {
+      float: right; }
+  .content .products .products-list .product-item .add-button {
+    position: absolute;
+    bottom: 10px;
+    right: 15px; }
+  .content .products .products-list .product-item aside {
+    position: absolute;
+    left: 15px;
+    bottom: 10px; }
 
-.list-group .list-group-item .image {
-  height: 120px; }
+.list-group .list-group-item {
+  height: 160px;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 1px 1px 1px #ddd;
+  -moz-box-shadow: 1px 1px 1px #ddd;
+  box-shadow: 1px 1px 1px #ddd; }
+  .list-group .list-group-item .image {
+    height: 90px; }
 
 /*# sourceMappingURL=app.css.map */

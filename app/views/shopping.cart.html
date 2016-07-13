@@ -1,5 +1,9 @@
 <div ng-init="initShoppingCartController()">
+  <flash-message></flash-message>
   <section class="list-group">
-    <div class="list-group-item" ng-click="remove(product)" ng-repeat="product in shoppingCartViewController.items">Cras justo odio</div>
+    <div class="list-group-item" ng-click="remove(product)" ng-repeat="product in shoppingCartViewController.items">
+      <p class="name">{{product.product_name}}</p>
+      <p class="quantity">{{product.quantity}}</p>
+    </div>
   </section>
 </div>

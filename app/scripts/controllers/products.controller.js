@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('MapApp')
-  .controller('ProductsController', ['$rootScope', '$scope', 'requestService', 'modelsFactory',
-    function ($rootScope, $scope, requestService, modelsFactory) {
+  .controller('ProductsController', ['$rootScope', '$scope', 'requestService', 'modelsFactory', 'Flash',
+    function ($rootScope, $scope, requestService, modelsFactory, Flash) {
 
       $scope.initProductsController = function () {
         $scope.productsViewControl = modelsFactory.productsModel();
@@ -15,8 +15,9 @@ angular.module('MapApp')
       };
 
       $scope.addToCart = function(product) {
-        requestService.addItem(product.id, 1).then(function(result) {
+        requestService.addItem(product.id, product.quantity).then(function(result) {
           $rootScope.$emit(':update.cart');
+          Flash.create('success', 'toto');
         }, function(err) {
           console.log(err);
         });

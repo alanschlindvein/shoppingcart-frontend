@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('MapApp')
-	.factory('labelsViewFactory', function () {
+	.factory('controllerViewFactory', function () {
 		var labels = {
 			'ADD_TO_CART'   : 'Adicionar ao carrinho',
 			'SHOPPING_CART' : 'Carrinho de compras',

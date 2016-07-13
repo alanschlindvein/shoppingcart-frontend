@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('MapApp')
-	.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $httpProvider) {
-    $httpProvider.defaults.withCredentials = true;
+	.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'FlashProvider', function($stateProvider, $urlRouterProvider, $httpProvider, FlashProvider) {
+		FlashProvider.setTimeout(3000);
+		FlashProvider.setShowClose(true);
+        $httpProvider.defaults.withCredentials = true;
 		$urlRouterProvider.otherwise('/main/products');
 		$stateProvider.state('main', {
 			url: '/main',
