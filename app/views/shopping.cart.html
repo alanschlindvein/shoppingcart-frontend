@@ -1,9 +1,14 @@
-<div ng-init="initShoppingCartController()">
-  <flash-message></flash-message>
-  <section class="list-group">
-    <div class="list-group-item" ng-click="remove(product)" ng-repeat="product in shoppingCartViewController.items">
+<div ng-init="initShoppingCartController()" class="shoppingcart">
+  <section class="total">
+    <div class="total-label">{{::'TOTAL_CART' | soGoToLang}}</div>
+    <p>{{shoppingCartViewController.amount | currency: '$ '}}</p>
+  </section>
+  <section class="list-group shoppingcart-list">
+    <div class="list-group-item shoppingcart-list-item" ng-repeat="product in shoppingCartViewController.items">
       <p class="name">{{product.product_name}}</p>
-      <p class="quantity">{{product.quantity}}</p>
+      <p class="price">{{product.amount * product.quantity | currency: '$ '}}</p>
+      <p class="name">{{::'QUANTITY' | soGoToLang}}: <span>{{product.quantity }}</span></p>
+      <div class="remove-button" ng-click="remove(product, $index)"><i class="glyphicon glyphicon-remove"></i></div>
     </div>
   </section>
 </div>

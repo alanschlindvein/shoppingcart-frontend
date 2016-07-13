@@ -1,3 +1,17 @@
+@import 'colors';
+
+button {
+  outline: none !important;
+}
+
+.message {
+  position: absolute;
+  top: 56px;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+}
+
 body, .main {
   position: absolute;
   top: 0;
@@ -7,13 +21,61 @@ body, .main {
   overflow: hidden;
 }
 
+.btn-primary {
+  background-color: $main-green;
+  border: none;
+  &:focus,
+  &:active:focus,
+  &.active:focus,
+  &.focus,
+  &:hover,
+  &:active.focus,
+  &.active.focus {
+    border: none;
+    background-color: $dark-green;
+  }
+}
+
 .header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 52px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $main-grey;
+  .title {
+    position: absolute;
+    top: 11px;
+    left: 20px;
+    font-size: 2rem;
+    color: $main-green;
+  }
+  .back-button {
+    vertical-align: middle;
+    padding: 0 12px 0 0;
+    text-decoration: none;
+    cursor: pointer;
+    color: $dark-grey;
+    &:hover {
+      color: $main-green;
+    }
+  }
+  .cart {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    cursor: pointer;
+    a {
+      color: $dark-grey;
+      font-weight: 600;
+    }
+    .badge {
+      background-color: $main-green;
+    }
+    a:hover {
+      text-decoration: none !important;
+    }
+  }
 }
 
 .content {
@@ -23,50 +85,85 @@ body, .main {
   right: 0;
   bottom: 0;
   padding: 8px;
-  background-color: #f1f1f1;
+  background-color: $light-grey;
   overflow-y: auto;
   .products {
     .products-list {
       .product-item {
+        height: 160px;
         img { float: left }
         .info {
           float: right;
+          max-width: 50%;
           p { margin-bottom: 0; }
           .name {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 600;
           }
-          .price {
-            float: right;
-          }
+          .price { float: right; }
         }
         .add-button {
           position: absolute;
           bottom: 10px;
           right: 15px;
         }
-        aside {
+        .controls {
           position: absolute;
           left: 15px;
-          bottom: 10px;
+          bottom: 0;
+          button { float: left; }
+          .quatity {
+            text-align: center;
+            margin: 0 8px;
+            float: left;
+            .number {
+              margin: 0 5px;
+              font-size: 1.8rem;
+            }
+            .controls-label {
+              font-size: 1.1rem;
+              vertical-align: bottom;
+            }
+          }
         }
       }
     }
   }
   .shoppingcart {
-
+    .total {
+      text-align: right;
+      .total-label {
+        font-size: 1.8rem;
+        color: $dark-grey;
+      }
+    }
+    .shoppingcart-list {
+      .shoppingcart-list-item {
+        .remove-button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          border: none;
+          cursor: pointer;
+          font-size: 1.8rem;
+          color: $dark-grey;
+          padding: 10px;
+          &:hover { color: $main-green; }
+        }
+      }
+    }
   }
 }
 
 .list-group {
   .list-group-item {
-    height: 160px;
     margin-bottom: 5px;
-    -webkit-box-shadow: 1px 1px 1px #ddd;
-    -moz-box-shadow: 1px 1px 1px #ddd;
-    box-shadow: 1px 1px 1px #ddd;
+    -webkit-box-shadow: 1px 1px 1px $main-grey;
+    -moz-box-shadow: 1px 1px 1px $main-grey;
+    box-shadow: 1px 1px 1px $main-grey;
     .image {
       height: 90px;
+      max-width: 50%;
     }
   }
 }

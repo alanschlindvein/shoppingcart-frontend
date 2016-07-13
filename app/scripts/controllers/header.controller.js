@@ -15,7 +15,12 @@ angular.module('MapApp')
 
 			$scope.initHeaderController = function () {
 				$scope.headerViewControl = modelsFactory.headerModel();
-				$scope.getShoppingCart();
+				var shoopingcart = dataHolderService.get('shoppingcart');
+				if(!shoopingcart) {
+					$scope.getShoppingCart();
+					return;
+				}
+				$scope.headerViewControl.amount = shoopingcart.items.length;
 			};
 
 			$scope.getShoppingCart = function () {

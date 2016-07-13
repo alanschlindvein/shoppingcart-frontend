@@ -22,17 +22,15 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/spin.js/spin.js"></script>
-    <script src="bower_components/angular-spinner/angular-spinner.js"></script>
     <script src="bower_components/angular-flash-alert/dist/angular-flash.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/app.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/routes.js"></script>
+    <!-- build:js({.tmp,app}) scripts/app.run.js -->
+    <script src="scripts/app.run.js"></script>
+    <script src="scripts/app.config.js"></script>
+    <script src="scripts/app.routes.js"></script>
     <script src="scripts/templates.js"></script>
 
     <script src="scripts/helpers/soTranslate.js"></script>
@@ -40,6 +38,7 @@
     <script src="scripts/factories/models.factory.js"></script>
     <script src="scripts/factories/url.factory.js"></script>
     <script src="scripts/factories/labels.view.factory.js"></script>
+    <script src="scripts/factories/labels.controller.factory.js"></script>
 
     <script src="scripts/services/request.service.js"></script>
     <script src="scripts/services/data.holder.service.js"></script>
@@ -51,7 +50,6 @@
     <!-- endbuild -->
   </head>
   <body ng-app="MapApp" ng-controller="AppController" ng-init="initAppController()">
-    <span us-spinner="{radius:15, width:5, length: 12}" spinner-key="spinner-1"></span>
     <div class="main" ui-view></div>
   </body>
 </html>
